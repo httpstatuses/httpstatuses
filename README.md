@@ -1,8 +1,6 @@
-# [httpstatuses.io][5]
+# [httpstatuscodes.io][5]
 
-This project is a revival of the now-defunct httpstatuses.com ([background](https://jkulton.com/2022/reviving-httpstatuses))
-
-[httpstatuses.io][5] is an easy to reference database of HTTP Status Codes with their definitions and helpful code references, each code is at `httpstatuses.io/code`. All standard codes are included, as are some non-standard codes that have significant presence in the wild.
+[httpstatuscodes.io][5] is an easy to reference database of HTTP Status Codes with their definitions and helpful code references, each code is at `httpstatuscodes.io/code`. All standard codes are included, as are some non-standard codes that have significant presence in the wild.
 
 ## Development
 
@@ -24,9 +22,9 @@ Each status code lives in a Markdown file at [contents/codes](contents/codes), t
 * [Don't double-space after a period][4], and remove any examples of it
 * If the description references a section in the current RFC, always add the RFC identifier. For example "Section 6.6" should become "RFC1234 Section 6.6"
 
-[1]: <https://github.com/httpstatuses/httpstatuses/issues>
+[1]: <https://github.com/fluxera/httpstatuscodes/issues>
 [2]: <https://daringfireball.net/projects/markdown/syntax#link>
 [3]: <http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml>
 [4]: <http://www.slate.com/articles/technology/technology/2011/01/space_invaders.html>
-[5]: <https://httpstatuses.io>
+[5]: <https://httpstatuscodes.io>
 [6]: <http://localhost:4887>

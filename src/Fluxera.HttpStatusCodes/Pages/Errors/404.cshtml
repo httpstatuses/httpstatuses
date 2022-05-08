@@ -1,0 +1,15 @@
+﻿@page
+@model NotFoundModel
+@{
+	ViewData["Title"] = "Page Not Found";
+}
+
+<div class="hero introduction">
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns">
+				<markdown markdown="@(this.Model.NotFoundMarkdown)" />
+			</div>
+		</div>
+	</div>
+</div>

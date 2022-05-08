@@ -1,0 +1,15 @@
+﻿@page
+@model InternalServerErrorModel
+@{
+    ViewData["Title"] = "Internal Server Error";
+}
+
+<div class="hero introduction">
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns">
+				<markdown markdown="@(this.Model.InternalServerErrorMarkdown)" />
+			</div>
+		</div>
+	</div>
+</div>

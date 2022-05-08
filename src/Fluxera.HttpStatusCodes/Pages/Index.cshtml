@@ -1,0 +1,41 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "HTTP Status Codes";
+}
+
+<div class="hero introduction">
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns">
+				<markdown markdown="@(this.Model.IndexMarkdown)" />
+			</div>
+		</div>
+	</div>
+</div>
+<div class="share">
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns">
+				<a href="https://twitter.com/intent/tweet?hashtags=httpstatuscodes&amp;text=Helpful%20HTTP%20Status%20Code%20reference%20site&amp;url=https%3A%2F%2Fhttpstatuscodes.io" class="twitter">&commat; Share on Twitter</a>
+				<a href="https://github.com/fluxera/httpstatuscodes.io" class="github">&bigstar; Star on GitHub</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="codes">
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns">
+				@foreach((_, StatusCodeClass statusCodeClass) in this.Model.StatusCodeClasses)
+				{
+					<ul>
+						<li>
+							<h2>@Html.Raw(HttpUtility.HtmlDecode(statusCodeClass.Title))</h2>
+						</li>
+					</ul>
+				}
+			</div>
+		</div>
+	</div>
+</div>

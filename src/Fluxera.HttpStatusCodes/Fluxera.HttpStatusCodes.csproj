@@ -1,0 +1,97 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\contents\codes\classes.json" Link="markdown\codes\classes.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SharpYaml" Version="1.9.0" />
+    <PackageReference Include="Westwind.AspNetCore.Markdown" Version="3.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="markdown\codes\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\contents\codes\100.md" Link="markdown\codes\100.md" />
+    <EmbeddedResource Include="..\..\contents\codes\101.md" Link="markdown\codes\101.md" />
+    <EmbeddedResource Include="..\..\contents\codes\102.md" Link="markdown\codes\102.md" />
+    <EmbeddedResource Include="..\..\contents\codes\103.md" Link="markdown\codes\103.md" />
+    <EmbeddedResource Include="..\..\contents\codes\200.md" Link="markdown\codes\200.md" />
+    <EmbeddedResource Include="..\..\contents\codes\201.md" Link="markdown\codes\201.md" />
+    <EmbeddedResource Include="..\..\contents\codes\202.md" Link="markdown\codes\202.md" />
+    <EmbeddedResource Include="..\..\contents\codes\203.md" Link="markdown\codes\203.md" />
+    <EmbeddedResource Include="..\..\contents\codes\204.md" Link="markdown\codes\204.md" />
+    <EmbeddedResource Include="..\..\contents\codes\205.md" Link="markdown\codes\205.md" />
+    <EmbeddedResource Include="..\..\contents\codes\206.md" Link="markdown\codes\206.md" />
+    <EmbeddedResource Include="..\..\contents\codes\207.md" Link="markdown\codes\207.md" />
+    <EmbeddedResource Include="..\..\contents\codes\208.md" Link="markdown\codes\208.md" />
+    <EmbeddedResource Include="..\..\contents\codes\226.md" Link="markdown\codes\226.md" />
+    <EmbeddedResource Include="..\..\contents\codes\300.md" Link="markdown\codes\300.md" />
+    <EmbeddedResource Include="..\..\contents\codes\301.md" Link="markdown\codes\301.md" />
+    <EmbeddedResource Include="..\..\contents\codes\302.md" Link="markdown\codes\302.md" />
+    <EmbeddedResource Include="..\..\contents\codes\303.md" Link="markdown\codes\303.md" />
+    <EmbeddedResource Include="..\..\contents\codes\304.md" Link="markdown\codes\304.md" />
+    <EmbeddedResource Include="..\..\contents\codes\305.md" Link="markdown\codes\305.md" />
+    <EmbeddedResource Include="..\..\contents\codes\307.md" Link="markdown\codes\307.md" />
+    <EmbeddedResource Include="..\..\contents\codes\308.md" Link="markdown\codes\308.md" />
+    <EmbeddedResource Include="..\..\contents\codes\400.md" Link="markdown\codes\400.md" />
+    <EmbeddedResource Include="..\..\contents\codes\401.md" Link="markdown\codes\401.md" />
+    <EmbeddedResource Include="..\..\contents\codes\402.md" Link="markdown\codes\402.md" />
+    <EmbeddedResource Include="..\..\contents\codes\403.md" Link="markdown\codes\403.md" />
+    <EmbeddedResource Include="..\..\contents\codes\404.md" Link="markdown\codes\404.md" />
+    <EmbeddedResource Include="..\..\contents\codes\405.md" Link="markdown\codes\405.md" />
+    <EmbeddedResource Include="..\..\contents\codes\406.md" Link="markdown\codes\406.md" />
+    <EmbeddedResource Include="..\..\contents\codes\407.md" Link="markdown\codes\407.md" />
+    <EmbeddedResource Include="..\..\contents\codes\408.md" Link="markdown\codes\408.md" />
+    <EmbeddedResource Include="..\..\contents\codes\409.md" Link="markdown\codes\409.md" />
+    <EmbeddedResource Include="..\..\contents\codes\410.md" Link="markdown\codes\410.md" />
+    <EmbeddedResource Include="..\..\contents\codes\411.md" Link="markdown\codes\411.md" />
+    <EmbeddedResource Include="..\..\contents\codes\412.md" Link="markdown\codes\412.md" />
+    <EmbeddedResource Include="..\..\contents\codes\413.md" Link="markdown\codes\413.md" />
+    <EmbeddedResource Include="..\..\contents\codes\414.md" Link="markdown\codes\414.md" />
+    <EmbeddedResource Include="..\..\contents\codes\415.md" Link="markdown\codes\415.md" />
+    <EmbeddedResource Include="..\..\contents\codes\416.md" Link="markdown\codes\416.md" />
+    <EmbeddedResource Include="..\..\contents\codes\417.md" Link="markdown\codes\417.md" />
+    <EmbeddedResource Include="..\..\contents\codes\418.md" Link="markdown\codes\418.md" />
+    <EmbeddedResource Include="..\..\contents\codes\421.md" Link="markdown\codes\421.md" />
+    <EmbeddedResource Include="..\..\contents\codes\422.md" Link="markdown\codes\422.md" />
+    <EmbeddedResource Include="..\..\contents\codes\423.md" Link="markdown\codes\423.md" />
+    <EmbeddedResource Include="..\..\contents\codes\424.md" Link="markdown\codes\424.md" />
+    <EmbeddedResource Include="..\..\contents\codes\426.md" Link="markdown\codes\426.md" />
+    <EmbeddedResource Include="..\..\contents\codes\428.md" Link="markdown\codes\428.md" />
+    <EmbeddedResource Include="..\..\contents\codes\429.md" Link="markdown\codes\429.md" />
+    <EmbeddedResource Include="..\..\contents\codes\431.md" Link="markdown\codes\431.md" />
+    <EmbeddedResource Include="..\..\contents\codes\444.md" Link="markdown\codes\444.md" />
+    <EmbeddedResource Include="..\..\contents\codes\451.md" Link="markdown\codes\451.md" />
+    <EmbeddedResource Include="..\..\contents\codes\499.md" Link="markdown\codes\499.md" />
+    <EmbeddedResource Include="..\..\contents\codes\500.md" Link="markdown\codes\500.md" />
+    <EmbeddedResource Include="..\..\contents\codes\501.md" Link="markdown\codes\501.md" />
+    <EmbeddedResource Include="..\..\contents\codes\502.md" Link="markdown\codes\502.md" />
+    <EmbeddedResource Include="..\..\contents\codes\503.md" Link="markdown\codes\503.md" />
+    <EmbeddedResource Include="..\..\contents\codes\504.md" Link="markdown\codes\504.md" />
+    <EmbeddedResource Include="..\..\contents\codes\505.md" Link="markdown\codes\505.md" />
+    <EmbeddedResource Include="..\..\contents\codes\506.md" Link="markdown\codes\506.md" />
+    <EmbeddedResource Include="..\..\contents\codes\507.md" Link="markdown\codes\507.md" />
+    <EmbeddedResource Include="..\..\contents\codes\508.md" Link="markdown\codes\508.md" />
+    <EmbeddedResource Include="..\..\contents\codes\510.md" Link="markdown\codes\510.md" />
+    <EmbeddedResource Include="..\..\contents\codes\511.md" Link="markdown\codes\511.md" />
+    <EmbeddedResource Include="..\..\contents\codes\599.md" Link="markdown\codes\599.md" />
+    <EmbeddedResource Include="..\..\contents\error-404.md" Link="markdown\error-404.md" />
+    <EmbeddedResource Include="..\..\contents\error-500.md" Link="markdown\error-500.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\contents\index.md" Link="markdown\index.md" />
+  </ItemGroup>
+
+</Project>

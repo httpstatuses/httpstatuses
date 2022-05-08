@@ -1,5 +1,5 @@
 {
-  "name": "httpstatuses",
+  "name": "httpstatuscodes",
   "version": "1.0.1",
   "description": "An easy to reference directory of HTTP Status Codes",
   "main": "build.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/httpstatuses/httpstatuses.git"
+    "url": "git+https://github.com/fluxera/httpstatuscodes.io.git"
   },
   "author": "Jon Kulton <hello@jkulton.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/httpstatuses/httpstatuses/issues"
+    "url": "https://github.com/fluxera/httpstatuscodes.io/issues"
   },
-  "homepage": "https://github.com/httpstatuses/httpstatuses#readme",
+  "homepage": "https://github.com/fluxera/httpstatuscodes.io#readme",
   "dependencies": {
     "finalhandler": "^0.4.1",
     "http": "0.0.0",

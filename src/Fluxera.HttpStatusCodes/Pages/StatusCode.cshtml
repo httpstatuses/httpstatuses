@@ -1,0 +1,19 @@
+﻿@page "/{statusCode:int}"
+@model StatusCodeModel
+@{
+	ViewData["Title"] = "";
+}
+
+<div class="banner">
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns">
+				<p><a href="/">&larr; Return to httpstatuscodes.io</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+<article class="code container">
+	<h2>2&times;&times; Success</h2>
+	<markdown markdown="@(this.Model.StatusCodeMarkdown)" />
+</article>

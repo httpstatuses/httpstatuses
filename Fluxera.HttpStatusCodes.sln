@@ -1,0 +1,192 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".items", ".items", "{B49D70E5-13A6-4DC3-A033-144B46D40D06}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{80D638B3-D11B-4A29-8F10-D6ED2A3C2C0D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fluxera.HttpStatusCodes", "src\Fluxera.HttpStatusCodes\Fluxera.HttpStatusCodes.csproj", "{954AC546-8A99-4790-9854-D8CE8CA094B8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "contents", "contents", "{64EB1846-F5F5-45CB-9986-C93C7CB64EFE}"
+	ProjectSection(SolutionItems) = preProject
+		contents\error-404.md = contents\error-404.md
+		contents\error-500.md = contents\error-500.md
+		contents\index.md = contents\index.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "codes", "codes", "{DEF8C103-4A53-46DE-94CC-1B39823B0F7B}"
+	ProjectSection(SolutionItems) = preProject
+		contents\codes\100.md = contents\codes\100.md
+		contents\codes\101.md = contents\codes\101.md
+		contents\codes\102.md = contents\codes\102.md
+		contents\codes\103.md = contents\codes\103.md
+		contents\codes\200.md = contents\codes\200.md
+		contents\codes\201.md = contents\codes\201.md
+		contents\codes\202.md = contents\codes\202.md
+		contents\codes\203.md = contents\codes\203.md
+		contents\codes\204.md = contents\codes\204.md
+		contents\codes\205.md = contents\codes\205.md
+		contents\codes\206.md = contents\codes\206.md
+		contents\codes\207.md = contents\codes\207.md
+		contents\codes\208.md = contents\codes\208.md
+		contents\codes\226.md = contents\codes\226.md
+		contents\codes\300.md = contents\codes\300.md
+		contents\codes\301.md = contents\codes\301.md
+		contents\codes\302.md = contents\codes\302.md
+		contents\codes\303.md = contents\codes\303.md
+		contents\codes\304.md = contents\codes\304.md
+		contents\codes\305.md = contents\codes\305.md
+		contents\codes\307.md = contents\codes\307.md
+		contents\codes\308.md = contents\codes\308.md
+		contents\codes\400.md = contents\codes\400.md
+		contents\codes\401.md = contents\codes\401.md
+		contents\codes\402.md = contents\codes\402.md
+		contents\codes\403.md = contents\codes\403.md
+		contents\codes\404.md = contents\codes\404.md
+		contents\codes\405.md = contents\codes\405.md
+		contents\codes\406.md = contents\codes\406.md
+		contents\codes\407.md = contents\codes\407.md
+		contents\codes\408.md = contents\codes\408.md
+		contents\codes\409.md = contents\codes\409.md
+		contents\codes\410.md = contents\codes\410.md
+		contents\codes\411.md = contents\codes\411.md
+		contents\codes\412.md = contents\codes\412.md
+		contents\codes\413.md = contents\codes\413.md
+		contents\codes\414.md = contents\codes\414.md
+		contents\codes\415.md = contents\codes\415.md
+		contents\codes\416.md = contents\codes\416.md
+		contents\codes\417.md = contents\codes\417.md
+		contents\codes\418.md = contents\codes\418.md
+		contents\codes\421.md = contents\codes\421.md
+		contents\codes\422.md = contents\codes\422.md
+		contents\codes\423.md = contents\codes\423.md
+		contents\codes\424.md = contents\codes\424.md
+		contents\codes\426.md = contents\codes\426.md
+		contents\codes\428.md = contents\codes\428.md
+		contents\codes\429.md = contents\codes\429.md
+		contents\codes\431.md = contents\codes\431.md
+		contents\codes\444.md = contents\codes\444.md
+		contents\codes\451.md = contents\codes\451.md
+		contents\codes\499.md = contents\codes\499.md
+		contents\codes\500.md = contents\codes\500.md
+		contents\codes\501.md = contents\codes\501.md
+		contents\codes\502.md = contents\codes\502.md
+		contents\codes\503.md = contents\codes\503.md
+		contents\codes\504.md = contents\codes\504.md
+		contents\codes\505.md = contents\codes\505.md
+		contents\codes\506.md = contents\codes\506.md
+		contents\codes\507.md = contents\codes\507.md
+		contents\codes\508.md = contents\codes\508.md
+		contents\codes\510.md = contents\codes\510.md
+		contents\codes\511.md = contents\codes\511.md
+		contents\codes\599.md = contents\codes\599.md
+		contents\codes\classes.json = contents\codes\classes.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{AD689558-8795-4F1D-882F-0934E292111F}"
+	ProjectSection(SolutionItems) = preProject
+		build\100.html = build\100.html
+		build\101.html = build\101.html
+		build\102.html = build\102.html
+		build\103.html = build\103.html
+		build\200.html = build\200.html
+		build\201.html = build\201.html
+		build\202.html = build\202.html
+		build\203.html = build\203.html
+		build\204.html = build\204.html
+		build\205.html = build\205.html
+		build\206.html = build\206.html
+		build\207.html = build\207.html
+		build\208.html = build\208.html
+		build\226.html = build\226.html
+		build\300.html = build\300.html
+		build\301.html = build\301.html
+		build\302.html = build\302.html
+		build\303.html = build\303.html
+		build\304.html = build\304.html
+		build\305.html = build\305.html
+		build\307.html = build\307.html
+		build\308.html = build\308.html
+		build\400.html = build\400.html
+		build\401.html = build\401.html
+		build\402.html = build\402.html
+		build\403.html = build\403.html
+		build\404.html = build\404.html
+		build\405.html = build\405.html
+		build\406.html = build\406.html
+		build\407.html = build\407.html
+		build\408.html = build\408.html
+		build\409.html = build\409.html
+		build\410.html = build\410.html
+		build\411.html = build\411.html
+		build\412.html = build\412.html
+		build\413.html = build\413.html
+		build\414.html = build\414.html
+		build\415.html = build\415.html
+		build\416.html = build\416.html
+		build\417.html = build\417.html
+		build\418.html = build\418.html
+		build\421.html = build\421.html
+		build\422.html = build\422.html
+		build\423.html = build\423.html
+		build\424.html = build\424.html
+		build\426.html = build\426.html
+		build\428.html = build\428.html
+		build\429.html = build\429.html
+		build\431.html = build\431.html
+		build\444.html = build\444.html
+		build\451.html = build\451.html
+		build\499.html = build\499.html
+		build\500.html = build\500.html
+		build\501.html = build\501.html
+		build\502.html = build\502.html
+		build\503.html = build\503.html
+		build\504.html = build\504.html
+		build\505.html = build\505.html
+		build\506.html = build\506.html
+		build\507.html = build\507.html
+		build\508.html = build\508.html
+		build\510.html = build\510.html
+		build\511.html = build\511.html
+		build\599.html = build\599.html
+		build\error-404.html = build\error-404.html
+		build\error-500.html = build\error-500.html
+		build\favicon-2c8f09ecdff4f6b2ee66cc6a3c000019.ico = build\favicon-2c8f09ecdff4f6b2ee66cc6a3c000019.ico
+		build\index.html = build\index.html
+		build\open-sans-regular.woff = build\open-sans-regular.woff
+		build\robots.txt = build\robots.txt
+		build\source-code-pro-700.woff = build\source-code-pro-700.woff
+		build\style-2dcf89d5dd55d68524e7bf2734f702b2.css = build\style-2dcf89d5dd55d68524e7bf2734f702b2.css
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{954AC546-8A99-4790-9854-D8CE8CA094B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{954AC546-8A99-4790-9854-D8CE8CA094B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{954AC546-8A99-4790-9854-D8CE8CA094B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{954AC546-8A99-4790-9854-D8CE8CA094B8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{954AC546-8A99-4790-9854-D8CE8CA094B8} = {80D638B3-D11B-4A29-8F10-D6ED2A3C2C0D}
+		{64EB1846-F5F5-45CB-9986-C93C7CB64EFE} = {B49D70E5-13A6-4DC3-A033-144B46D40D06}
+		{DEF8C103-4A53-46DE-94CC-1B39823B0F7B} = {64EB1846-F5F5-45CB-9986-C93C7CB64EFE}
+		{AD689558-8795-4F1D-882F-0934E292111F} = {B49D70E5-13A6-4DC3-A033-144B46D40D06}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D19EE1DD-5769-4236-9D2E-1B5DE213EAD7}
+	EndGlobalSection
+EndGlobal
