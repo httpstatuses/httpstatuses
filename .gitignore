@@ -354,3 +354,9 @@ MigrationBackup/
 
 # Visual Studio Code folder
 .vscode/
+
+/src/Fluxera.HttpStatusCodes/wwwroot/robots.txt
+/src/Fluxera.HttpStatusCodes/wwwroot/favicon.ico
+/src/Fluxera.HttpStatusCodes/wwwroot/css/style.css
+/src/Fluxera.HttpStatusCodes/wwwroot/css/source-code-pro-700.woff
+/src/Fluxera.HttpStatusCodes/wwwroot/css/open-sans-regular.woff

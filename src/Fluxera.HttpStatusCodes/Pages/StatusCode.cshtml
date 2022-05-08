@@ -1,7 +1,7 @@
 ﻿@page "/{statusCode:int}"
 @model StatusCodeModel
 @{
-	ViewData["Title"] = "";
+	ViewData["Title"] = this.Model.PageContent.Title;
 }
 
 <div class="banner">
@@ -15,5 +15,5 @@
 </div>
 <article class="code container">
 	<h2>2&times;&times; Success</h2>
-	<markdown markdown="@(this.Model.StatusCodeMarkdown)" />
+	<markdown markdown="@(this.Model.PageContent.Markdown)" />
 </article>

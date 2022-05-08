@@ -13,13 +13,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="SharpYaml" Version="1.9.0" />
+    <PackageReference Include="Fluxera.Guards" Version="6.0.22" />
+    <PackageReference Include="SharpYaml" Version="1.9.1" />
     <PackageReference Include="Westwind.AspNetCore.Markdown" Version="3.8.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="markdown\codes\" />
-    <Folder Include="Services\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 

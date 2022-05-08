@@ -1,14 +1,16 @@
 ﻿@page
+@using System.Web
+@using Fluxera.HttpStatusCodes.Model
 @model IndexModel
 @{
-    ViewData["Title"] = "HTTP Status Codes";
+    ViewData["Title"] = this.Model.PageContent.Title;
 }
 
 <div class="hero introduction">
 	<div class="container">
 		<div class="row">
 			<div class="twelve columns">
-				<markdown markdown="@(this.Model.IndexMarkdown)" />
+				<markdown markdown="@(this.Model.PageContent.Markdown)" />
 			</div>
 		</div>
 	</div>
