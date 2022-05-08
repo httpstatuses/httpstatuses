@@ -1,18 +1,25 @@
 # [httpstatuscodes.io][5]
 
-[httpstatuscodes.io][5] is an easy to reference database of HTTP Status Codes with their definitions and helpful code references, each code is at `httpstatuscodes.io/code`. All standard codes are included, as are some non-standard codes that have significant presence in the wild.
+[httpstatuscodes.io][5] is an easy to reference database of HTTP Status Codes with their definitions and 
+helpful code references, each code is at `httpstatuscodes.io/code`. All standard codes are included, as 
+are some non-standard codes that have significant presence in the wild.
 
 ## Development
 
-App currently builds and runs on Node v12.
+The application currently runs on ASP.NET 6 with Razor Pages.
 
-Run `npm install` to pull in dependencies and then `node build`, a preview will be available at [localhost:4887][6].
+Run `npm install` to pull in dependencies and then `node build` to create the style.css file.
+
+Run the application using `dotnet run --project src/Fluxera.HttpStatusCodes` The application is available [locally][6].
 
 ## Contributing
 
-All contributions are welcome! If you have an idea to improve the website please submit a pull request or [create an issue][1], or provide your thoughts on [open issues][1].
+All contributions are welcome! If you have an idea to improve the website please submit a pull request or 
+[create an issue][1], or provide your thoughts on [open issues][1].
 
-Each status code lives in a Markdown file at [contents/codes](contents/codes), the easiest way to submit changes is via the GitHub editor. When contributing changes to the status codes please be mindful of the following:
+Each status code lives in a Markdown file at [contents/codes](contents/codes), the easiest way to submit 
+changes is via the GitHub editor. When contributing changes to the status codes please be mindful of the 
+following:
 
 * Markdown links should be used as [references instead of inline][2]
 * If an RFC or external document is referenced, make the reference a link
@@ -27,4 +34,4 @@ Each status code lives in a Markdown file at [contents/codes](contents/codes), t
 [3]: <http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml>
 [4]: <http://www.slate.com/articles/technology/technology/2011/01/space_invaders.html>
 [5]: <https://httpstatuscodes.io>
-[6]: <http://localhost:4887>
+[6]: <https://localhost:5001>

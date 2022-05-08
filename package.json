@@ -4,14 +4,13 @@
   "description": "An easy to reference directory of HTTP Status Codes",
   "main": "build.js",
   "scripts": {
-    "start": "node build.js",
-    "test": "node build.js without-preview"
+    "start": "node build.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fluxera/httpstatuscodes.io.git"
   },
-  "author": "Jon Kulton <hello@jkulton.com>",
+  "author": "Matthias Gernand",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/fluxera/httpstatuscodes.io/issues"
@@ -34,7 +33,7 @@
     "metalsmith-markdown": "^0.2.1",
     "metalsmith-sass": "^1.3.0",
     "metalsmith-writemetadata": "^0.4.5",
-    "serve-static": "^1.10.2",
+	"serve-static": "^1.10.2",
     "skeleton-scss": "^2.0.4"
   }
 }
