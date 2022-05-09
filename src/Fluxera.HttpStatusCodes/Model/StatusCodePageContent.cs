@@ -18,18 +18,18 @@ namespace Fluxera.HttpStatusCodes.Model
 
 				this.References = references.ToArray();
 			}
+			else
+			{
+				this.References = Array.Empty<ReferenceContent>();
+			}
 		}
 
 		public int Set => (int)this.FrontMatter["set"];
 
 		public int Code => (int)this.FrontMatter["code"];
 
-		public ReferenceContent[] References { get; }
+		public string Excerpt => (string)this.FrontMatter["excerpt"];
 
-		public static string CreateKey(int statusCode)
-		{
-			string key = $"{nameof(StatusCodePageContent)}[{statusCode}]";
-			return key;
-		}
+		public ReferenceContent[] References { get; }
 	}
 }

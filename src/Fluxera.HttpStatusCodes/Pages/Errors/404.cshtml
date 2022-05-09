@@ -1,5 +1,5 @@
 ﻿@page
-@model NotFoundModel
+@model Fluxera.HttpStatusCodes.Pages.Errors.NotFoundModel
 @{
 	ViewData["Title"] = "Page Not Found";
 }
@@ -8,7 +8,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="twelve columns">
-				<markdown markdown="@(this.Model.NotFoundMarkdown)" />
+				<markdown markdown="@(this.Model.PageContent.Markdown)" />
 			</div>
 		</div>
 	</div>

@@ -1,31 +1,23 @@
 namespace Fluxera.HttpStatusCodes.Pages.Errors
 {
-	using System.Reflection;
-	using Microsoft.AspNetCore.Mvc;
+	using Fluxera.HttpStatusCodes.Model;
+	using Fluxera.HttpStatusCodes.Services;
 	using Microsoft.AspNetCore.Mvc.RazorPages;
 
 	public class NotFoundModel : PageModel
 	{
-		public string NotFoundMarkdown { get; set; }
+		private readonly IStatusCodeModelRepository repository;
 
-		public async Task<IActionResult> OnGetAsync()
+		public NotFoundModel(IStatusCodeModelRepository repository)
 		{
-			Stream resourceStream = Assembly
-				.GetExecutingAssembly()
-				.GetManifestResourceStream("Fluxera.HttpStatusCodes.markdown.error-404.md");
+			this.repository = repository;
+		}
 
-			if(resourceStream != null)
-			{
-				await using(resourceStream)
-				{
-					using(StreamReader reader = new StreamReader(resourceStream))
-					{
-						this.NotFoundMarkdown = await reader.ReadToEndAsync();
-					}
-				}
-			}
+		public NotFoundPageContent PageContent { get; set; }
 
-			return this.Page();
+		public void OnGet()
+		{
+			this.PageContent = this.repository.GetNotFoundPageContent();
 		}
 	}
 }

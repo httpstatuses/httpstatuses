@@ -1,9 +1,8 @@
 ﻿@page
-@using System.Web
-@using Fluxera.HttpStatusCodes.Model
-@model IndexModel
+@model Fluxera.HttpStatusCodes.Pages.IndexModel
 @{
     ViewData["Title"] = this.Model.PageContent.Title;
+	ViewData["Description"] = "HTTP Status Code directory, with definitions, details and helpful code references.";
 }
 
 <div class="hero introduction">
@@ -29,12 +28,16 @@
 	<div class="container">
 		<div class="row">
 			<div class="twelve columns">
-				@foreach((_, StatusCodeClass statusCodeClass) in this.Model.StatusCodeClasses)
+				@foreach((int set, StatusCodeClass statusCodeClass) in this.Model.StatusCodeClasses)
 				{
 					<ul>
 						<li>
 							<h2>@Html.Raw(HttpUtility.HtmlDecode(statusCodeClass.Title))</h2>
 						</li>
+						@foreach(StatusCodePageContent statusCodePageContent in this.Model.StatusPageContents.Where(x => x.Set == set))
+						{
+							<li><a href="/@(statusCodePageContent.Code)"><span>@(statusCodePageContent.Code)</span> @(statusCodePageContent.Title)</a></li>
+						}
 					</ul>
 				}
 			</div>

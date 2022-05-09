@@ -2,6 +2,7 @@ namespace Fluxera.HttpStatusCodes.Pages
 {
 	using Fluxera.HttpStatusCodes.Model;
 	using Fluxera.HttpStatusCodes.Services;
+	using Microsoft.AspNetCore.Mvc;
 	using Microsoft.AspNetCore.Mvc.RazorPages;
 
 	public class StatusCodeModel : PageModel
@@ -15,12 +16,19 @@ namespace Fluxera.HttpStatusCodes.Pages
 
 		public StatusCodePageContent PageContent { get; set; }
 
-		public StatusCodeClasses StatusCodeClasses { get; set; }
+		public StatusCodeClass StatusCodeClass { get; set; }
 
-		public void OnGet(int statusCode)
+		public IActionResult OnGet(int statusCode)
 		{
+			if(!this.repository.ExistsStatusCodePageContent(statusCode))
+			{
+				return this.StatusCode(404);
+			}
+
 			this.PageContent = this.repository.GetStatusCodePageContent(statusCode);
-			this.StatusCodeClasses = this.repository.GetStatusCodeClasses();
+			this.StatusCodeClass = this.repository.GetStatusCodeClass(this.PageContent.Set);
+
+			return this.Page();
 		}
 	}
 }

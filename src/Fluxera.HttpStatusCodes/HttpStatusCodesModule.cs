@@ -5,9 +5,11 @@
 	using Fluxera.Extensions.Hosting;
 	using Fluxera.Extensions.Hosting.Modules;
 	using Fluxera.Extensions.Hosting.Modules.AspNetCore;
+	using Fluxera.Extensions.Hosting.Modules.AspNetCore.Cors;
 	using Fluxera.Extensions.Hosting.Modules.AspNetCore.RazorPages;
 	using Fluxera.Extensions.Hosting.Modules.Caching;
 	using Fluxera.Guards;
+	using Fluxera.HttpStatusCodes.Contributors;
 	using Fluxera.HttpStatusCodes.Model;
 	using Fluxera.HttpStatusCodes.Services;
 	using JetBrains.Annotations;
@@ -16,12 +18,22 @@
 	using Markdig.Syntax;
 	using SharpYaml.Serialization;
 	using Westwind.AspNetCore.Markdown;
+	using Markdown = Markdig.Markdown;
 
 	[UsedImplicitly]
 	[DependsOn(typeof(CachingModule))]
 	[DependsOn(typeof(RazorPagesModule))]
+	[DependsOn(typeof(CorsModule))]
 	internal sealed class HttpStatusCodesModule : ConfigureApplicationModule
 	{
+		/// <inheritdoc />
+		public override void PreConfigureServices(IServiceConfigurationContext context)
+		{
+			// Add the endpoint route contributor.
+			context.Log("AddEndpointRouteContributor",
+				services => services.AddEndpointRouteContributor<EndpointRouteContributor>());
+		}
+
 		/// <inheritdoc />
 		public override void ConfigureServices(IServiceConfigurationContext context)
 		{
@@ -44,7 +56,7 @@
 			}
 			else
 			{
-				app.UseExceptionHandler("/errors/{0}");
+				app.UseExceptionHandler("/errors/500");
 				app.UseHsts();
 			}
 
@@ -59,6 +71,8 @@
 			app.UseMarkdown();
 
 			context.UseRouting();
+
+			context.UseCors();
 
 			context.UseEndpoints();
 		}
@@ -79,12 +93,13 @@
 			IndexPageContent indexPageContent = LoadIndexPageContent();
 			repository.Add(nameof(IndexPageContent), indexPageContent);
 
+			// Load the not found page markdown.
+			NotFoundPageContent notFoundPageContent = LoadNotFoundPageContent();
+			repository.Add(nameof(NotFoundPageContent), notFoundPageContent);
+
 			// Load the status codes markdown.
 			StatusCodePageContent[] statusCodePageContents = LoadStatusPageContents();
-			foreach(StatusCodePageContent statusCodePageContent in statusCodePageContents)
-			{
-				repository.Add(StatusCodePageContent.CreateKey(statusCodePageContent.Code), statusCodePageContent);
-			}
+			repository.Add(nameof(StatusCodePageContent), statusCodePageContents);
 		}
 
 		private static StatusCodePageContent[] LoadStatusPageContents()
@@ -108,17 +123,16 @@
 				{
 					using(resourceStream)
 					{
-						StatusCodePageContent content = null;
-
 						using(StreamReader reader = new StreamReader(resourceStream))
 						{
 							string markdown = reader.ReadToEnd();
-							IDictionary<string, object> frontMatter = GetFrontMatter(markdown);
-
-							content = new StatusCodePageContent(markdown, frontMatter);
+							IDictionary<string, object> frontMatter = GetFrontMatter(markdown, true);
+							if(frontMatter != null)
+							{
+								StatusCodePageContent content = new StatusCodePageContent(markdown, frontMatter);
+								contents.Add(content);
+							}
 						}
-
-						contents.Add(content);
 					}
 				}
 				else
@@ -138,24 +152,47 @@
 			{
 				using(resourceStream)
 				{
-					IndexPageContent content = null;
-
 					using(StreamReader reader = new StreamReader(resourceStream))
 					{
 						string markdown = reader.ReadToEnd();
-						IDictionary<string, object> frontMatter = GetFrontMatter(markdown);
-
-						content = new IndexPageContent(markdown, frontMatter);
+						IDictionary<string, object> frontMatter = GetFrontMatter(markdown, false);
+						if(frontMatter != null)
+						{
+							IndexPageContent content = new IndexPageContent(markdown, frontMatter);
+							return content;
+						}
 					}
-
-					return content;
 				}
 			}
 
 			throw new InvalidOperationException("The index page content could not be loaded.");
 		}
 
-		private static IDictionary<string, object> GetFrontMatter(string markdown)
+		private static NotFoundPageContent LoadNotFoundPageContent()
+		{
+			Stream resourceStream = GetResourceStream("error-404.md");
+
+			if(resourceStream != null)
+			{
+				using(resourceStream)
+				{
+					using(StreamReader reader = new StreamReader(resourceStream))
+					{
+						string markdown = reader.ReadToEnd();
+						IDictionary<string, object> frontMatter = GetFrontMatter(markdown, false);
+						if(frontMatter != null)
+						{
+							NotFoundPageContent content = new NotFoundPageContent(markdown, frontMatter);
+							return content;
+						}
+					}
+				}
+			}
+
+			throw new InvalidOperationException("The index page content could not be loaded.");
+		}
+
+		private static IDictionary<string, object> GetFrontMatter(string markdown, bool extractExcerpt)
 		{
 			markdown = Guard.Against.NullOrWhiteSpace(markdown);
 
@@ -163,13 +200,35 @@
 				.UseYamlFrontMatter()
 				.Build();
 
-			MarkdownDocument document = Markdig.Markdown.Parse(markdown, pipeline);
+			MarkdownDocument document = Markdown.Parse(markdown, pipeline);
 			YamlFrontMatterBlock yamlBlock = document.Descendants<YamlFrontMatterBlock>().FirstOrDefault();
-			string yaml = markdown.Substring(yamlBlock.Span.Start, yamlBlock.Span.Length);
 
-			Serializer serializer = new Serializer();
-			yaml = yaml.Replace("---", "").Trim();
-			return serializer.Deserialize<IDictionary<string, object>>(yaml);
+			IDictionary<string, object> frontMatter = null;
+			if(yamlBlock != null)
+			{
+				string yaml = markdown.Substring(yamlBlock.Span.Start, yamlBlock.Span.Length);
+				Serializer serializer = new Serializer();
+				yaml = yaml.Replace("---", "").Trim();
+				frontMatter = serializer.Deserialize<IDictionary<string, object>>(yaml);
+			}
+
+			if(extractExcerpt && frontMatter != null)
+			{
+				ParagraphBlock paragraphBlock = document.Descendants<ParagraphBlock>().FirstOrDefault();
+				if(paragraphBlock != null)
+				{
+					string paragraphMarkdown = markdown.Substring(paragraphBlock.Span.Start, paragraphBlock.Span.Length);
+					string plainText = Markdown.ToPlainText(paragraphMarkdown);
+
+					string excerpt = plainText
+						.Split('.', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
+						.First() + ".";
+					excerpt = excerpt.Replace("\n", "").Replace("\r", "");
+					frontMatter.Add("excerpt", excerpt);
+				}
+			}
+
+			return frontMatter;
 		}
 
 		private static StatusCodeClasses LoadStatusCodeClasses()

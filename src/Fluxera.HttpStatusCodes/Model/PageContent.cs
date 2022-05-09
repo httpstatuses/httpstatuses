@@ -12,7 +12,7 @@ namespace Fluxera.HttpStatusCodes.Model
 
 		public string Markdown { get; }
 
-		public string Title => this.FrontMatter["title"] as string;
+		public string Title => (string)this.FrontMatter["title"];
 
 		protected IDictionary<string, object> FrontMatter { get; }
 	}

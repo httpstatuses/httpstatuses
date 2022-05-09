@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Fluxera.Extensions.Hosting.Modules.AspNetCore.Cors" Version="6.0.0" />
     <PackageReference Include="Fluxera.Extensions.Hosting.Modules.AspNetCore.RazorPages" Version="6.0.0" />
     <PackageReference Include="Fluxera.Extensions.Hosting.Modules.Caching" Version="6.0.0" />
     <PackageReference Include="Fluxera.Guards" Version="6.0.22" />

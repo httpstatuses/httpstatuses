@@ -17,10 +17,13 @@
 
 		public StatusCodeClasses StatusCodeClasses { get; set; }
 
+		public StatusCodePageContent[] StatusPageContents { get; set; }
+
 		public void OnGet()
 		{
 			this.PageContent = this.repository.GetIndexPageContent();
 			this.StatusCodeClasses = this.repository.GetStatusCodeClasses();
+			this.StatusPageContents = this.repository.GetStatusCodePageContents();
 		}
 	}
 }

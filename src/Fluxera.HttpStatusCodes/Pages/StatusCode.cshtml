@@ -1,7 +1,8 @@
 ﻿@page "/{statusCode:int}"
-@model StatusCodeModel
+@model Fluxera.HttpStatusCodes.Pages.StatusCodeModel
 @{
-	ViewData["Title"] = this.Model.PageContent.Title;
+	ViewData["Title"] = $"{this.Model.PageContent.Code} {this.Model.PageContent.Title}";
+	ViewData["Description"] = $"HTTP Status Code {this.Model.PageContent.Code}: {this.Model.PageContent.Excerpt}";
 }
 
 <div class="banner">
@@ -14,6 +15,16 @@
 	</div>
 </div>
 <article class="code container">
-	<h2>2&times;&times; Success</h2>
+	<h2>@Html.Raw(HttpUtility.HtmlDecode(this.Model.StatusCodeClass.Title))</h2>
+	<h1><span>@(this.Model.PageContent.Code)</span> @(this.Model.PageContent.Title)</h1>
 	<markdown markdown="@(this.Model.PageContent.Markdown)" />
+	@if(this.Model.PageContent.References.Any())
+	{
+		<h1 class="section"><span>@(this.Model.PageContent.Code)</span> Code References</h1>
+		@foreach(ReferenceContent reference in this.Model.PageContent.References)
+		{
+			<p>@(reference.Text) <code>@(reference.Example)</code></p>
+		}
+	}
+	<a href="/">&larr; Return to httpstatuscodes.io</a>
 </article>

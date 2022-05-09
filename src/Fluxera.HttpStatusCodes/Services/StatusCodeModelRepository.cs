@@ -18,6 +18,18 @@
 			throw new InvalidOperationException("The status code classes could not be loaded.");
 		}
 
+
+		/// <inheritdoc />
+		public StatusCodeClass GetStatusCodeClass(int statusCodeClass)
+		{
+			if(this.GetStatusCodeClasses().TryGetValue(statusCodeClass, out StatusCodeClass value))
+			{
+				return value;
+			}
+
+			throw new InvalidOperationException($"The status code class '{statusCodeClass}' could not be loaded.");
+		}
+
 		/// <inheritdoc />
 		public IndexPageContent GetIndexPageContent()
 		{
@@ -30,14 +42,43 @@
 		}
 
 		/// <inheritdoc />
-		public StatusCodePageContent GetStatusCodePageContent(int statusCode)
+		public NotFoundPageContent GetNotFoundPageContent()
 		{
-			if(this.store.TryGetValue(StatusCodePageContent.CreateKey(statusCode), out object value))
+			if(this.store.TryGetValue(nameof(NotFoundPageContent), out object value))
 			{
-				return (StatusCodePageContent)value;
+				return (NotFoundPageContent)value;
 			}
 
-			throw new InvalidOperationException($"The status page content ('{statusCode}') could not be loaded.");
+			throw new InvalidOperationException("The not found page content could not be loaded.");
+		}
+
+		/// <inheritdoc />
+		public StatusCodePageContent[] GetStatusCodePageContents()
+		{
+			if(this.store.TryGetValue(nameof(StatusCodePageContent), out object value))
+			{
+				return (StatusCodePageContent[])value;
+			}
+
+			throw new InvalidOperationException("The status page contents could not be loaded.");
+		}
+
+		/// <inheritdoc />
+		public StatusCodePageContent GetStatusCodePageContent(int statusCode)
+		{
+			StatusCodePageContent value = this.GetStatusCodePageContents().FirstOrDefault(x => x.Code == statusCode);
+			if(value != null)
+			{
+				return value;
+			}
+
+			throw new InvalidOperationException($"The status page content '{statusCode}' could not be loaded.");
+		}
+
+		/// <inheritdoc />
+		public bool ExistsStatusCodePageContent(int statusCode)
+		{
+			return this.GetStatusCodePageContents().Any(x => x.Code == statusCode);
 		}
 
 		/// <inheritdoc />
