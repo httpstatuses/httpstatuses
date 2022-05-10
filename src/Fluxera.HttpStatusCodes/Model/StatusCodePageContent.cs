@@ -1,5 +1,9 @@
 namespace Fluxera.HttpStatusCodes.Model
 {
+	using System;
+	using System.Collections.Generic;
+	using System.Linq;
+
 	public class StatusCodePageContent : PageContent
 	{
 		/// <inheritdoc />

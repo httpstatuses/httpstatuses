@@ -7,12 +7,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<EmbeddedResource Include="..\..\contents\codes\classes.json" Link="markdown\codes\classes.json">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-		</EmbeddedResource>
-	</ItemGroup>
-
-	<ItemGroup>
 		<PackageReference Include="Fluxera.Extensions.Hosting.Modules.AspNetCore.Cors" Version="6.0.1" />
 		<PackageReference Include="Fluxera.Extensions.Hosting.Modules.AspNetCore.RazorPages" Version="6.0.1" />
 		<PackageReference Include="Fluxera.Extensions.Hosting.Modules.Caching" Version="6.0.1" />
@@ -22,11 +16,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Folder Include="markdown\codes\" />
-		<Folder Include="wwwroot\" />
-	</ItemGroup>
-
-	<ItemGroup>
+		<EmbeddedResource Include="..\..\contents\codes\classes.json" Link="markdown\codes\classes.json" />
 		<EmbeddedResource Include="..\..\contents\codes\100.md" Link="markdown\codes\100.md" />
 		<EmbeddedResource Include="..\..\contents\codes\101.md" Link="markdown\codes\101.md" />
 		<EmbeddedResource Include="..\..\contents\codes\102.md" Link="markdown\codes\102.md" />
@@ -92,9 +82,7 @@
 		<EmbeddedResource Include="..\..\contents\codes\511.md" Link="markdown\codes\511.md" />
 		<EmbeddedResource Include="..\..\contents\codes\599.md" Link="markdown\codes\599.md" />
 		<EmbeddedResource Include="..\..\contents\error-404.md" Link="markdown\error-404.md" />
-		<EmbeddedResource Include="..\..\contents\error-500.md" Link="markdown\error-500.md">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-		</EmbeddedResource>
+		<EmbeddedResource Include="..\..\contents\error-500.md" Link="markdown\error-500.md" />
 		<EmbeddedResource Include="..\..\contents\index.md" Link="markdown\index.md" />
 	</ItemGroup>
 

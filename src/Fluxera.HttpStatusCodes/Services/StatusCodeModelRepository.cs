@@ -1,6 +1,8 @@
 ﻿namespace Fluxera.HttpStatusCodes.Services
 {
+	using System;
 	using System.Collections.Concurrent;
+	using System.Linq;
 	using Fluxera.HttpStatusCodes.Model;
 
 	public sealed class StatusCodeModelRepository : IStatusCodeModelRepository

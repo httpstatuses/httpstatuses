@@ -1,5 +1,6 @@
 namespace Fluxera.HttpStatusCodes
 {
+	using System.Threading.Tasks;
 	using Fluxera.Extensions.Hosting;
 
 	public static class Program

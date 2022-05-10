@@ -1,9 +1,14 @@
 ﻿namespace Fluxera.HttpStatusCodes.Contributors
 {
+	using System;
+	using System.Linq;
 	using Fluxera.Extensions.Hosting;
 	using Fluxera.Extensions.Hosting.Modules.AspNetCore;
 	using Fluxera.HttpStatusCodes.Model;
 	using Fluxera.HttpStatusCodes.Services;
+	using Microsoft.AspNetCore.Builder;
+	using Microsoft.AspNetCore.Http;
+	using Microsoft.AspNetCore.Routing;
 	using Microsoft.AspNetCore.WebUtilities;
 
 	internal sealed class EndpointRouteContributor : IEndpointRouteContributor

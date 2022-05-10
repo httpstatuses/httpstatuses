@@ -1,5 +1,6 @@
 namespace Fluxera.HttpStatusCodes.Model
 {
+	using System.Collections.Generic;
 	using Fluxera.Guards;
 
 	public abstract class PageContent

@@ -1,6 +1,8 @@
 namespace Fluxera.HttpStatusCodes.Pages.Errors
 {
+	using System.IO;
 	using System.Reflection;
+	using System.Threading.Tasks;
 	using Microsoft.AspNetCore.Mvc;
 	using Microsoft.AspNetCore.Mvc.RazorPages;
 
