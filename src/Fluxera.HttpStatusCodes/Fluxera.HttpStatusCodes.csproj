@@ -13,9 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Fluxera.Extensions.Hosting.Modules.AspNetCore.Cors" Version="6.0.0" />
-    <PackageReference Include="Fluxera.Extensions.Hosting.Modules.AspNetCore.RazorPages" Version="6.0.0" />
-    <PackageReference Include="Fluxera.Extensions.Hosting.Modules.Caching" Version="6.0.0" />
+    <PackageReference Include="Fluxera.Extensions.Hosting.Modules.AspNetCore.Cors" Version="6.0.1" />
+    <PackageReference Include="Fluxera.Extensions.Hosting.Modules.AspNetCore.RazorPages" Version="6.0.1" />
+    <PackageReference Include="Fluxera.Extensions.Hosting.Modules.Caching" Version="6.0.1" />
     <PackageReference Include="Fluxera.Guards" Version="6.0.22" />
     <PackageReference Include="SharpYaml" Version="1.9.1" />
     <PackageReference Include="Westwind.AspNetCore.Markdown" Version="3.8.0" />

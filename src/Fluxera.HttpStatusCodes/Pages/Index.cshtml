@@ -34,7 +34,7 @@
 						<li>
 							<h2>@Html.Raw(HttpUtility.HtmlDecode(statusCodeClass.Title))</h2>
 						</li>
-						@foreach(StatusCodePageContent statusCodePageContent in this.Model.StatusPageContents.Where(x => x.Set == set))
+						@foreach(StatusCodePageContent statusCodePageContent in this.Model.StatusPageContents.Where(x => x.Set == set && !x.IsUnlisted))
 						{
 							<li><a href="/@(statusCodePageContent.Code)"><span>@(statusCodePageContent.Code)</span> @(statusCodePageContent.Title)</a></li>
 						}

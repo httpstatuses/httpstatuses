@@ -30,6 +30,8 @@ namespace Fluxera.HttpStatusCodes.Model
 
 		public string Excerpt => (string)this.FrontMatter["excerpt"];
 
+		public bool IsUnlisted => this.FrontMatter.ContainsKey("unlisted") && (bool)this.FrontMatter["unlisted"];
+
 		public ReferenceContent[] References { get; }
 	}
 }
