@@ -2,8 +2,10 @@
 {
 	using Fluxera.HttpStatusCodes.Model;
 	using Fluxera.HttpStatusCodes.Services;
+	using Microsoft.AspNetCore.Mvc;
 	using Microsoft.AspNetCore.Mvc.RazorPages;
 
+	[ResponseCache(Duration = 60 * 60 * 24, NoStore = false)]
 	public class IndexModel : PageModel
 	{
 		private readonly IStatusCodeModelRepository repository;

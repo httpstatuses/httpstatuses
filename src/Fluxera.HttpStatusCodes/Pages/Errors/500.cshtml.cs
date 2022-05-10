@@ -6,6 +6,8 @@ namespace Fluxera.HttpStatusCodes.Pages.Errors
 	using Microsoft.AspNetCore.Mvc;
 	using Microsoft.AspNetCore.Mvc.RazorPages;
 
+	[IgnoreAntiforgeryToken]
+	[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
 	public class InternalServerErrorModel : PageModel
 	{
 		public string InternalServerErrorMarkdown { get; set; }

@@ -5,6 +5,7 @@ namespace Fluxera.HttpStatusCodes.Pages
 	using Microsoft.AspNetCore.Mvc;
 	using Microsoft.AspNetCore.Mvc.RazorPages;
 
+	[ResponseCache(Duration = 60 * 60 * 24, NoStore = false, VaryByQueryKeys = new string[] { "statusCode" })]
 	public class StatusCodeModel : PageModel
 	{
 		private readonly IStatusCodeModelRepository repository;

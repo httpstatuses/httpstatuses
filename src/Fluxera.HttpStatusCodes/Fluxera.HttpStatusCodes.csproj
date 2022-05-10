@@ -10,7 +10,16 @@
 		<PackageReference Include="Fluxera.Extensions.Hosting.Modules.AspNetCore.Cors" Version="6.0.1" />
 		<PackageReference Include="Fluxera.Extensions.Hosting.Modules.AspNetCore.RazorPages" Version="6.0.1" />
 		<PackageReference Include="Fluxera.Extensions.Hosting.Modules.Caching" Version="6.0.1" />
+		<PackageReference Include="Fluxera.Extensions.Hosting.Modules.Serilog" Version="6.0.1" />
 		<PackageReference Include="Fluxera.Guards" Version="6.0.22" />
+		<PackageReference Include="Serilog.Enrichers.AssemblyName" Version="1.0.9" />
+		<PackageReference Include="Serilog.Enrichers.Environment" Version="2.2.0" />
+		<PackageReference Include="Serilog.Enrichers.Process" Version="2.0.2" />
+		<PackageReference Include="Serilog.Enrichers.Thread" Version="3.1.0" />
+		<PackageReference Include="Serilog.Settings.Configuration" Version="3.3.0" />
+		<PackageReference Include="Serilog.Sinks.Console" Version="4.0.1" />
+		<PackageReference Include="Serilog.Sinks.Debug" Version="2.0.0" />
+		<PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
 		<PackageReference Include="SharpYaml" Version="1.9.1" />
 		<PackageReference Include="Westwind.AspNetCore.Markdown" Version="3.8.0" />
 	</ItemGroup>

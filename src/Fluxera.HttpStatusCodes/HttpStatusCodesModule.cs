@@ -1,5 +1,6 @@
 ﻿namespace Fluxera.HttpStatusCodes
 {
+	using System;
 	using Fluxera.Extensions.Hosting;
 	using Fluxera.Extensions.Hosting.Modules;
 	using Fluxera.Extensions.Hosting.Modules.AspNetCore;
@@ -10,8 +11,10 @@
 	using Fluxera.HttpStatusCodes.Services;
 	using JetBrains.Annotations;
 	using Microsoft.AspNetCore.Builder;
+	using Microsoft.AspNetCore.Http;
 	using Microsoft.Extensions.DependencyInjection;
 	using Microsoft.Extensions.Hosting;
+	using Microsoft.Net.Http.Headers;
 	using Westwind.AspNetCore.Markdown;
 
 	[UsedImplicitly]
@@ -44,6 +47,8 @@
 		{
 			WebApplication app = context.GetApplicationBuilder();
 
+			context.UseHttpsRedirection();
+
 			if(context.Environment.IsDevelopment())
 			{
 				context.UseDeveloperExceptionPage();
@@ -54,19 +59,29 @@
 				app.UseHsts();
 			}
 
-			context.UseHttpsRedirection();
-
 			context.UseStatusCodePagesWithReExecute("/errors/{0}");
-
-			context.UseStaticFiles();
-
-			context.UseResponseCaching();
-
-			context.UseMarkdown();
 
 			context.UseRouting();
 
 			context.UseCors();
+
+			context.UseResponseCaching();
+
+			app.Use(async (httpContext, next) =>
+			{
+				httpContext.Response.GetTypedHeaders().CacheControl = new CacheControlHeaderValue
+				{
+					Public = true,
+					MaxAge = TimeSpan.FromSeconds(10)
+				};
+				httpContext.Response.Headers[HeaderNames.Vary] = new string[] { "Accept-Encoding" };
+
+				await next();
+			});
+
+			context.UseStaticFiles();
+
+			context.UseMarkdown();
 
 			context.UseEndpoints();
 		}

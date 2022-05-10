@@ -360,3 +360,4 @@ MigrationBackup/
 /src/Fluxera.HttpStatusCodes/wwwroot/css/style.css
 /src/Fluxera.HttpStatusCodes/wwwroot/css/source-code-pro-700.woff
 /src/Fluxera.HttpStatusCodes/wwwroot/css/open-sans-regular.woff
+/src/Fluxera.HttpStatusCodes/Properties/ServiceDependencies/httpstatuscodes - Web Deploy/profile.arm.json
