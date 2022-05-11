@@ -5,9 +5,9 @@
 	using Fluxera.Extensions.Hosting.Modules;
 	using Fluxera.Extensions.Hosting.Modules.AspNetCore;
 	using Fluxera.Extensions.Hosting.Modules.AspNetCore.Cors;
+	using Fluxera.Extensions.Hosting.Modules.AspNetCore.HttpApi;
 	using Fluxera.Extensions.Hosting.Modules.AspNetCore.RazorPages;
 	using Fluxera.Extensions.Hosting.Modules.Caching;
-	using Fluxera.HttpStatusCodes.Contributors;
 	using Fluxera.HttpStatusCodes.Services;
 	using JetBrains.Annotations;
 	using Microsoft.AspNetCore.Builder;
@@ -19,18 +19,11 @@
 
 	[UsedImplicitly]
 	[DependsOn(typeof(CachingModule))]
-	[DependsOn(typeof(RazorPagesModule))]
 	[DependsOn(typeof(CorsModule))]
+	[DependsOn(typeof(RazorPagesModule))]
+	[DependsOn(typeof(HttpApiModule))]
 	internal sealed class HttpStatusCodesModule : ConfigureApplicationModule
 	{
-		/// <inheritdoc />
-		public override void PreConfigureServices(IServiceConfigurationContext context)
-		{
-			// Add the endpoint route contributor.
-			context.Log("AddEndpointRouteContributor",
-				services => services.AddEndpointRouteContributor<EndpointRouteContributor>());
-		}
-
 		/// <inheritdoc />
 		public override void ConfigureServices(IServiceConfigurationContext context)
 		{

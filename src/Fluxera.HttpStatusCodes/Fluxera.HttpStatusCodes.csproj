@@ -8,6 +8,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="Fluxera.Extensions.Hosting.Modules.AspNetCore.Cors" Version="6.0.1" />
+		<PackageReference Include="Fluxera.Extensions.Hosting.Modules.AspNetCore.HttpApi" Version="6.0.1" />
 		<PackageReference Include="Fluxera.Extensions.Hosting.Modules.AspNetCore.RazorPages" Version="6.0.1" />
 		<PackageReference Include="Fluxera.Extensions.Hosting.Modules.Caching" Version="6.0.1" />
 		<PackageReference Include="Fluxera.Extensions.Hosting.Modules.Serilog" Version="6.0.1" />
@@ -93,6 +94,10 @@
 		<EmbeddedResource Include="..\..\contents\error-404.md" Link="markdown\error-404.md" />
 		<EmbeddedResource Include="..\..\contents\error-500.md" Link="markdown\error-500.md" />
 		<EmbeddedResource Include="..\..\contents\index.md" Link="markdown\index.md" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Controllers\" />
 	</ItemGroup>
 
 </Project>
