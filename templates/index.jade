@@ -17,4 +17,4 @@ block contents
         li #[h2 !{group.title}]
         each code in group.items
           unless code.unlisted
-            li #[a(href='/httpstatuses#{code.code}') #[span !{code.code}] #{code.title}]
+            li #[a(href='/httpstatuses/#{code.code}') #[span !{code.code}] #{code.title}]
