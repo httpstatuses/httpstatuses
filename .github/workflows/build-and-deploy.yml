@@ -49,3 +49,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: build # Created by the `Build static content` step
+          branch: gh-pages
